@@ -25,10 +25,9 @@ def compute_accuracy(v_xs, v_ys):
 xs=tf.placeholder(tf.float32,[None,784]) # 每张图片的分辨率是28×28，所以我们的训练网络输入应该是28×28=784个像素数据
 ys=tf.placeholder(tf.float32,[None,10]) #每张图片都表示一个数字，所以我们的输出是数字0到9，共10类
 
-prediction=add_layer(xs,784,10,activation_function=tf.nn.softmax) 
-# 输入数据是784个特征，输出数据是10个特征，激励采用softmax函数
+prediction=add_layer(xs,784,10,activation_function=tf.nn.softmax) # 输入数据是784个特征，输出数据是10个特征，激励采用softmax函数
 
-cross_entropy = tf.reduce_mean(-tf.reduce_sum(ys * tf.log(prediction),reduction_indices=[1])) # loss
+cross_entropy = tf.reduce_mean(-tf.reduce_sum(ys * tf.log(prediction),reduction_indices=[1])) # loss,reduction_indices=[1]横向对矩阵求和
 # loss函数（即最优化目标函数）选用交叉熵函数。交叉熵用来衡量预测值和真实值的相似程度，如果完全相同，它们的交叉熵等于零
 
 train_step=tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy) # 采用梯度下降法

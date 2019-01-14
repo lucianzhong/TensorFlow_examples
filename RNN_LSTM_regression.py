@@ -1,16 +1,15 @@
+# 使用到自己创建的 sin 曲线预测一条 cos 曲线
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-BATCH_START = 0
-TIME_STEPS = 20
-BATCH_SIZE = 50
-INPUT_SIZE = 1
-OUTPUT_SIZE = 1
-CELL_SIZE = 10
-LR = 0.006
-
+BATCH_START = 0      # 建立 batch data 时候的 index
+TIME_STEPS = 20     # backpropagation through time 的 time_steps
+BATCH_SIZE = 50     
+INPUT_SIZE = 1      # sin 数据输入 size
+OUTPUT_SIZE = 1      # cos 数据输出 size
+CELL_SIZE = 10       # RNN 的 hidden unit size 
+LR = 0.006          # learning rate
 
 def get_batch():
     global BATCH_START, TIME_STEPS
@@ -19,11 +18,9 @@ def get_batch():
     seq = np.sin(xs)
     res = np.cos(xs)
     BATCH_START += TIME_STEPS
-    # plt.plot(xs[0, :], res[0, :], 'r', xs[0, :], seq[0, :], 'b--')
-    # plt.show()
-    # returned seq, res and xs: shape (batch, step, input)
+    #plt.plot(xs[0, :], res[0, :], 'r', xs[0, :], seq[0, :], 'b--')
+    #plt.show()
     return [seq[:, :, np.newaxis], res[:, :, np.newaxis], xs]
-
 
 class LSTMRNN(object):
     def __init__(self, n_steps, input_size, output_size, cell_size, batch_size):
@@ -149,9 +146,3 @@ if __name__ == '__main__':
             print('cost: ', round(cost, 4))
             result = sess.run(merged, feed_dict)
 writer.add_summary(result, i)	
-		
-		
-		
-		
-		
-																		

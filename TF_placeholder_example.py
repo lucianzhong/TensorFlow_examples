@@ -6,7 +6,7 @@ input2=tf.placeholder(tf.float32)
 output=tf.multiply(input1,input2)
 
 sess=tf.Session()
-print(sess.run(output,feed_dict={input1:[7], input2:[2]}))
+print(sess.run(output,feed_dict={input1:[7], input2:[2]}))  # [14]
 
 
 #如果想要从外部传入data, 那就需要用到 tf.placeholder(), 
