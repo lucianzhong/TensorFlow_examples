@@ -29,3 +29,7 @@
 	loss函数（即最优化目标函数）选用交叉熵函数。交叉熵用来衡量预测值和真实值的相似程度，如果完全相同，它们的交叉熵等于零
 
 <8> RNN_LSTM_classification.py
+	处理序列数据的神经网络
+	LSTM 是 long-short term memory 的简称, 中文叫做 长短期记忆. 是当下最流行的 RNN 形式之一
+
+<9> RNN_LSTM_regression.py
