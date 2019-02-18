@@ -21,6 +21,8 @@
 
 <6> CNN_minist.py 
 
+	https://zhuanlan.zhihu.com/p/51322893
+
 
 
 
