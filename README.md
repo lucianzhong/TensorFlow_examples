@@ -1,9 +1,9 @@
 # Tensorflow example 
 
-##1.TF_placeholder_example.py  
+1.TF_placeholder_example.py  
 	如果想要从外部传入data, 那就需要用到 tf.placeholder(),然后以这种形式传输数据 sess.run(***, feed_dict={input: **})
 
-##2.TF_scope_example.py  
+2.TF_scope_example.py  
 	tf.get_variable() # the gobal variables  
 	tf.Variable() # the variables with scope
 
@@ -15,7 +15,7 @@
 	using one nn node to fitting the parameters
 
 5.TF_example_3.py
-	我们构建的是——输入层1个、隐藏层10个、输出层1个的神经网络
+	我们构建的是输入层1个、隐藏层10个、输出层1个的神经网络
 	fitting: y=x^2+0.5
 
 6.CNN_minist.py 
