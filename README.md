@@ -3,8 +3,8 @@
 1.TF_placeholder_example.py  
 	如果想要从外部传入data, 那就需要用到 tf.placeholder(),然后以这种形式传输数据 sess.run(***, feed_dict={input: **})
 
-2.TF_scope_example.py
-	tf.get_variable() # the gobal variables
+2.TF_scope_example.py  
+	tf.get_variable() # the gobal variables  
 	tf.Variable() # the variables with scope
 
 3.TF_session_example.py 
