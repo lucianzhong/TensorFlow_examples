@@ -1,6 +1,7 @@
 # Tensorflow example 
 
 1.TF_placeholder_example.py
+
 	如果想要从外部传入data, 那就需要用到 tf.placeholder(),然后以这种形式传输数据 sess.run(***, feed_dict={input: **})
 
 2.TF_scope_example.py
